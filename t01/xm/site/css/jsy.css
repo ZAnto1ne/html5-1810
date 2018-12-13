@@ -1,0 +1,127 @@
+/* 
+* @Author: Marte
+* @Date:   2018-11-24 09:12:41
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-11-24 15:18:24
+*/
+.nav_r{
+    width: 242px;
+    float: right;
+    box-sizing: border-box;
+    border-left: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+}
+/*nav_r_t*/
+.nav_r .nav_r_t{
+    width: 220px;
+    height: 173px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CFCFCF;
+    margin-left: 11px;
+    
+}
+.nav_r .nav_r_t p{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.nav_r .nav_r_t p:nth-child(1){
+    margin-top: 10px;
+}
+.nav_r .nav_r_t p:nth-child(6){
+    color:#CC0000;
+}
+.nav_r .nav_r_t span{
+    font-size: 10px;
+    line-height: 24px;
+}
+.fixed{
+    position:fixed;
+    top:0;
+    background:white;
+}
+/*nav_r_m*/
+.nav_r .nav_r_m{
+    width: 220px;
+    box-sizing: border-box;
+    margin-left: 11px;
+}
+.nav_r .nav_r_m p:nth-child(1){
+    margin:11px 0 0 5px;
+}
+.nav_r .nav_r_m p>a{
+    margin-left: 5px;
+}
+.nav_r_m ul li{
+    margin-top: 5px;
+    border-bottom: 1px dashed #CFCFCF;
+}
+.nav_r_m ul li img{
+    width: 65px;
+    height: 64px;
+    float: left;
+    margin-bottom: 18px;
+}
+.nav_r_m ul li p{
+    font-size: 10px;
+    line-height: 14px;
+}
+.nav_r_m ul li p:nth-child(2){
+    text-decoration: underline;
+}
+/*nav_r_b*/
+.nav_r_b{
+    width: 220px;
+    margin-left: 11px;
+    background: #EFEFEF;
+}
+.nav_r_b .t1{
+    height: 48px;
+    border-top: 2px solid #696969;
+    margin-top: 5px;
+    background:#DFDFDF;
+}
+.nav_r_b .t1 p{
+    font-size: 10px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+.nav_r_b .t1 p:nth-child(1){
+    margin-top: 2px;
+    font-weight:900;
+}
+.nav_r_b .t1 p span:nth-child(2){
+    color:#FA4500;
+}
+.nav_r_b ul li{
+    margin-top: 5px;
+}
+.nav_r_b ul li img{
+    float: left;
+    margin: 0 5px 18px 5px;
+}
+.nav_r_b ul li p{
+    font-size: 10px;
+    line-height: 14px;
+}
+.nav_r_b ul li p:nth-child(2){
+    text-decoration: underline;
+}
+.l1{
+    background: white;
+}
+.l1{
+    margin-top: 5px;
+    border-bottom: 1px dashed #CFCFCF;
+}
+.l1 img{
+    float: left;
+    margin-bottom: 18px;
+}
+.l1 p{
+    font-size: 10px;
+    line-height: 14px;
+}
+.l1 p:nth-child(2){
+    text-decoration: underline;
+}

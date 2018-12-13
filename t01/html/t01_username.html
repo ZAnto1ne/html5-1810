@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",function(){
+        var uname = document.getElementById("uname");
+        var tips = document.querySelector(".tips");
+        var status = [200,304];
+        uname.onblur = function(){
+            var _uname = uname.value;
+            if(_uname.trim().length == 0){
+                return;
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && status.indexOf(xhr.status)!=-1){
+                    tips.innerHTML = xhr.responseText;
+                }
+            }
+            xhr.open("get","../api/t01_username.php?username="+_uname,true);
+            xhr.send(null);
+        }
+
+    })
+    
+
+    </script>
+</head>
+<body>
+    用户名<input type="text" id="uname"><span class="tips"></span><br>
+    密码<input type="password" >
+</body>
+</html>

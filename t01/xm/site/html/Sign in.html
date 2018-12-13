@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/Nav.css" />
+		<link rel="stylesheet" type="text/css" href="../css/base_pc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/register.css" />
+		<link rel="stylesheet" type="text/css" href="../css/Top&Bottom.css" />
+        <script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/sing in.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var uname = document.getElementById("Rname");
+                var pwd = document.getElementById("Rpass1");
+                var registerBtn = document.getElementById("reg");
+                var login = document.getElementById("sub");
+                var Rpass2 = document.getElementById("Rpass2");
+                var tips = document.querySelector(".tips");
+                var status = [200,304];
+                uname.onblur = function(){
+                    
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState == 4 && status.indexOf(xhr.status)!=-1){
+                            tips.innerHTML = xhr.responseText;
+                        }
+                    }
+                    xhr.open("get","../api/t02_register.php?uname="+uname.value,true);
+                    xhr.send(null);
+                }
+                registerBtn.onclick = function(){
+                    if(uname.value.length == 0 || uname.value.length!=""){
+                        alert("账号不能为空");
+                    }else if(pwd.value.length == 0){
+                        alert("密码不能为空");
+                    }else if(Rpass2.value.length == 0){
+                        alert("请再次输入密码");
+                    }else if(Rpass2.value.length != 0){
+                        if(pwd.value != Rpass2.value){
+                            alert("两次输入密码不一致，请再次输入密码");
+                            Rpass2.value = '';  
+                        }else{
+                            var coder = document.getElementById("Coder");
+                            var getCodeBtnr = document.getElementById("getCodeBtnr");
+                            var _coder = coder.value;
+                            var _getCodeBtnr = getCodeBtnr.value;
+                            if(_coder == _getCodeBtnr){
+                                // alert("注册成功");
+                                var register = true;
+                                var xhr = new XMLHttpRequest();
+                                xhr.onreadystatechange = function(){
+                                    if(xhr.readyState == 4 && status.indexOf(xhr.status)!=-1){
+                                        alert(xhr.responseText);
+                                        // window.location.href="../Index.html";
+                                    }
+                                }
+                                xhr.open("get",`../api/t02_register.php?uname=${uname.value}&pwd=${pwd.value}&register=${register}`,true);
+                                xhr.send(null);
+                            }else if(_coder.length == 0){
+                                alert("请输入验证码");
+                            }else{
+                                alert("验证码错误");
+                                coder.value = '';
+                                getMa();
+                                }  
+                        }
+                    }
+                }
+                
+                login.onclick = function(){
+                    // var login = true;
+                    var name = document.getElementById("Name");
+                    var pass = document.getElementById("Password");
+                    var code = document.getElementById("Code");
+                    var getCodeBtn = document.getElementById("getCodeBtn");
+                    var _code = code.value;
+                    var _getCodeBtn = getCodeBtn.value;
+                    if(_code == _getCodeBtn){
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState == 4 && status.indexOf(xhr.status)!=-1){
+                            alert(xhr.responseText);
+                            if(xhr.responseText=="登录成功"){
+                                window.location.href="../Index.html";
+                            }
+                        }
+                    }
+                    xhr.open("get",`../api/login.php?name=${name.value}&pass=${pass.value}`,true);
+                    xhr.send(null);
+                }else if(_code.length == 0){
+                    alert("请输入验证码");
+                }else{
+                    alert("验证码错误");
+                    code.value = '';
+                    getMa();
+                    }
+                }
+            })
+
+    </script>
+	</head>
+
+	<body>
+		<div id="header">
+			<div class="header con">
+				<div class="header_top">
+					<ul class="header_top_l fl">
+						<li>Welcome,</li>
+						<li>
+							<a href="Sign in.html">Sign in</a>
+						</li>
+						<li>or</li>
+						<li>
+							<a href="Sign in.html">Reqister</a>
+						</li>
+						<li><span>text</span>,</li>
+						<li>
+							<a href="../Index.html">Sign out</a>
+						</li>
+					</ul>
+					<ul class="header_top_r fr">
+						<li>
+							<a href="#">My Account<span></span></a>
+							<ul class="h_t_r_1">
+								<li>
+									<a href="#"><span></span>My Wallet</a>
+								</li>
+								<li>
+									<a href="#"><span></span>My Orders</a>
+								</li>
+								<li>
+									<a href="#"><span></span>My Profile</a>
+								</li>
+								<li>
+									<a href="#"><span></span>My Coupons</a>
+								</li>
+								<li>
+									<a href="#"><span></span>Wish List</a>
+								</li>
+								<li>
+									<a href="#"><span></span>My Messages</a>
+								</li>
+							</ul>
+						</li>
+						<li id="CartLi">
+							<a href="shoppingcar.html"><span></span>0 Items <span>$0</span> <span></span></a>
+							<ul class="h_t_r_2">
+								<!-- <li>
+									<a href="#"><span></span>Gucci Vintage Web Leather Boston Tote Bag 247205 Red</a><i>$219 × 1</i></li>
+								<li>
+									<a href="#"><span></span>Gucci Vintage Web Leather Boston Tote Bag 247205 Red</a><i>$219 × 1</i></li>
+								<li>
+									<a href="#"><span></span>Gucci Vintage Web Leather Boston Tote Bag 247205 Red</a><i>$219 × 1</i></li>
+								<p>Subtotal:<span>$219 × 1</span></p>
+								<p><input type="button" name="" id="" value="Checkout" /></p> -->
+							</ul>
+						</li>
+						<li>
+							<a href="#">Order Tracking</a>
+						</li>
+						<li>
+							<a href="#"><span></span>Help</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header_bottom">
+					<h1 class="fl"><a href="../Index.html">Outlet</a></h1>
+					<div class="header_bottom_c fl">
+						<form action="#" method="post">
+							<span></span><input type="text" value="" placeholder="Please enter the keywords" /><input type="button" value="Search" />
+						</form>
+						<ul>
+							<li>
+								<a href="#">LV handbaqs</a>
+							</li>
+							<li>
+								<a href="#">shoes</a>
+							</li>
+							<li>
+								<a href="#">Rolex watch</a>
+							</li>
+						</ul>
+					</div>
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+		<div class="navvv">
+			<div class="nav con">
+				<div class="kong">
+				</div>
+
+				<div class="nav_a">
+					<dt>ALL CATEGORCC <i></i>
+
+            </dt>
+					<ul class="nav_au1">
+						<li>
+							<span>
+                     <a href="List.html">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+						</li>
+						<li>
+							<span>
+                     <a href="#">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+							<div class="nav_au1div">
+								<p></p>
+
+								<dl>
+									<a href="#">NFL</a>
+								</dl>
+								<dt>
+                            <a href="#">qwdefrsdffdeefre</a>
+                            <a href="#">qwdefdfdfrefre</a>
+                            <a href="#">qwdedfdfrefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrefre</a>
+                            <a href="#">qwdefredfdffre</a>
+                            <a href="#">qwdefreferfere</a>
+                            <a href="#">qwdefreffefre</a>
+                            <a href="#">qwdefreffeefefre</a>
+                            <a href="#">qwdefrefefefere</a>
+                            <a href="#">qwdefrefrfeefee</a>
+
+                        </dt>
+								<dt>
+                            <a href="#">qwdefrsdffdeefre</a>
+                            <a href="#">qwdefdfdfrefre</a>
+                            <a href="#">qwdedfdfrefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrefre</a>
+                            <a href="#">qwdefredfdffre</a>
+                            <a href="#">qwdefreferfere</a>
+                            <a href="#">qwdefreffefre</a>
+                            <a href="#">qwdefreffeefefre</a>
+                            <a href="#">qwdefrefefefere</a>
+                            <a href="#">qwdefrefrfeefee</a>
+
+                        </dt>
+								<dt>
+                            <a href="#">qwdefrsdffdeefre</a>
+                            <a href="#">qwdefdfdfrefre</a>
+                            <a href="#">qwdedfdfrefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrdfdfefre</a>
+                            <a href="#">qwdefrefre</a>
+                            <a href="#">qwdefredfdffre</a>
+                            <a href="#">qwdefreferfere</a>
+                            <a href="#">qwdefreffefre</a>
+                            <a href="#">qwdefreffeefefre</a>
+                            <a href="#">qwdefrefefefere</a>
+                            <a href="#">qwdefrefrfeefee</a>
+
+                        </dt>
+								<h1>
+                            <a href="#">NFL</a>
+                            
+                        </h1>
+								<h2>
+                            <a href="#">efdedfe</a>
+                            <a href="#">efefewdwdfe</a>
+                            <a href="#">efefewdwdfe</a>
+                        </h2>
+								<h1>
+                            <a href="#">NFL</a>
+                            
+                        </h1>
+								<h2>
+                            <a href="#">efdedfe</a>
+                            <a href="#">efefewdwdfe</a>
+                            <a href="#">efefewdwdfe</a>
+                        </h2>
+								<h1>
+                            <a href="#">NFL</a>
+                            
+                        </h1>
+								<h2>
+                            <a href="#">efdedfe</a>
+                            <a href="#">efefewdwdfe</a>
+                            <a href="#">efefewdwdfe</a>
+                        </h2>
+								<h3></h3>
+
+							</div>
+						</li>
+						<li>
+							<span>
+                     <a href="#">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+						</li>
+						<li>
+							<span>
+                     <a href="#">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+						</li>
+						<li>
+							<span>
+                     <a href="#">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+						</li>
+						<li>
+							<span>
+                     <a href="#">Jeyeiuhy</a>
+                    <a href="#">reif dsudh dejew</a>
+                    <a href="#">reif dsudh dejedfsdsfdw</a>
+                </span>
+
+						</li>
+					</ul>
+				</div>
+				<div class="nav_b">
+					<ul>
+						<li>
+							<a href="#">dfsdff</a>
+						</li>
+						<li>
+							<a href="#">ffsfsf</a>
+						</li>
+						<li>
+							<a href="#">sdgrfg</a>
+						</li>
+						<li>
+							<a href="#">rgesgf</a>
+						</li>
+						<li>
+							<a href="#">gdsgdsd</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="user">
+			<div class="user con">
+				<p class="user_top">Sign In or Register a New Account</p>
+				<!--left-->
+				<div class="user_left clearfix fl">
+					<form action="#" method="post">
+						<p>Email Address</p>
+						<input type="text" value="" id="Name"/>
+						<p>Password</p>
+						<input type="password" value="" id="Password"/><br/>
+						<input type="text" value="" id="Code"/>
+						<input type="button" id="getCodeBtn" value="获取验证码" /><br/>
+						<input type="button" id="sub" value="Sign In" />
+					</form>
+				</div>
+				<!--right-->
+				<div class="user_right fl">
+					<form method="post">
+						<p>EXCLUSIVE VIP OFFER for every new member!<br/>
+							<span>10% and 5% and 2% and $5 OFF</span>
+							<span><a href="#">details>></a></span>
+						</p>
+						<p>Email Address:</p>
+						<input type="text" value="" id="Rname"/><span style="font-size:12px;color:#ccc;" class="tips"></span>
+						<p>Spam is evil and you'll never see any from us.</p>
+						<p>password:</p>
+						<input type="password" id="Rpass1"/>
+						<p>Confirm Password:</p>
+						<input type="password" id="Rpass2"/><br/>
+						<input type="checkbox" name="aa" id="aa" />
+						<label for="aa">Get periodic updates.</label>
+						<p>It will be an email worth reading.And it won't come too often.</p>
+						<input type="checkbox" name="aa" id="bb" />
+						<label for="bb">I agree to tidemalls.com <a href="#">Terms of Use</a></label><br />
+						<input type="text" value="" id="Coder"/>
+						<input type="button" id="getCodeBtnr" value="获取验证码" />
+						<input type="button" value="register" id="reg"/>
+						</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="footer con">
+				<div class="f_t">
+					<div class="f_t_l">
+						<ul>
+							<li>Customer Service</li>
+							<li>Shopping Guide</li>
+							<li>Return Policy</li>
+							<li>FAQ</li>
+							<li>Shipping</li>
+							<li>Contact Us</li>
+						</ul>
+						<ul>
+							<li>Company Info</li>
+							<li>About Us</li>
+							<li>Why Buy From Us</li>
+							<li>Privacy & Secuiry Policy</li>
+							<li>Term of Use</li>
+						</ul>
+						<ul>
+							<li>Make Money With Us</li>
+							<li>Wholesale</li>
+							<li>Points & Coupon, Gifts</li>
+						</ul>
+						<ul class="f_t_l_u">
+							<li>Join our community</li>
+							<li><img src="../images/f_t_l_f.png" /><span>Add us</span><br />on facebok</li>
+							<li><img src="../images/f_t_l_t.png" /><span>Follow us</span><br />on twitter</li>
+							<li><img src="../images/f_t_l_b.png" /><span>Read us</span><br />on our offcial blog</li>
+						</ul>
+					</div>
+					<div class="f_t_r">
+						<div class="f_t_r_1"></div>
+						<div class="f_t_r_2">
+							<p>Enter your E-mail address and get your FREE E-Bool!</p>
+							<form action="#" method="post">
+								<input type="text" value="" placeholder="Enter you enail address" /><br />
+								<input type="button" value="" />
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="f_b">
+					<p><span></span></p>
+					<p>© 2008-2013
+						<a href="#">Tidemalls.com</a>All Rights Reserved.</p>
+				</div>
+			</div>
+			<div class="xgg"><img src="../images/xgg.png" /></div>
+		</div>
+
+	</body>
+
+</html>
