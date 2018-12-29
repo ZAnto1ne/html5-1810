@@ -1,0 +1,114 @@
+#top {
+  width: 100%;
+}
+
+#top .top {
+  height: 76px;
+}
+
+#top .top img {
+  margin: 20px 0 0 30px;
+}
+
+#main {
+  width: 100%;
+  background: #F7F2EC;
+}
+
+#main .main {
+  height: 874px;
+}
+
+#main .main img {
+  margin: 128px 0 0 66px;
+  float: left;
+  width: 597px;
+}
+
+#main .main .log {
+  width: 428px;
+  height: 500px;
+  float: right;
+  background: white;
+  margin: 128px 0 0 0;
+  position: relative;
+}
+
+#main .main .log ul li {
+  float: left;
+}
+
+#main .main .log ul li a {
+  display: inline-block;
+  width: 214px;
+  height: 50px;
+  color: black;
+  font-size: 18px;
+  line-height: 50px;
+  float: left;
+  text-align: center;
+}
+
+#main .main .log ul li #rg {
+  background: #F7F7F9;
+}
+
+#main .main .log ul li .loginw {
+  position: absolute;
+  width: 300px;
+  top: 100px;
+  left: 80px;
+}
+
+#main .main .log ul li .loginw form input {
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 20px;
+  width: 150px;
+}
+
+#main .main .log ul li .loginw form #getCode {
+  width: 80px;
+}
+
+#main .main .log ul li .loginw form #login {
+  width: 300px;
+  background: red;
+  color: white;
+}
+
+#main .main .log ul li .regw {
+  display: none;
+  position: absolute;
+  width: 300px;
+  top: 100px;
+  left: 80px;
+}
+
+#main .main .log ul li .regw form input {
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 20px;
+  width: 150px;
+}
+
+#main .main .log ul li .regw form span {
+  display: inline-block;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 20px;
+  width: 150px;
+}
+
+#main .main .log ul li .regw form #getCode, #main .main .log ul li .regw form #getCodeBtn {
+  width: 80px;
+}
+
+#main .main .log ul li .regw form #login, #main .main .log ul li .regw form #registerBtn {
+  width: 300px;
+  background: red;
+  color: white;
+}

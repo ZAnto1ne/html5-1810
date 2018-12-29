@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+<body>
+    <div id="top">
+        <div class="top con">
+            <a href="../index.html"><img src="../images/login/logo.png" /></a>
+        </div>
+    </div>
+    <!-- main -->
+    <div id="main">
+        <div class="main con">
+            <img src="../images/login/back.png"  />
+            <div class="log">
+                <ul>
+                    <li>
+                        <a id="lg">登录</a>
+                        <div class="loginw">
+                            <form action="#">
+                                <input id="uname" type="text" placeholder="账号"/><br />
+                                <input id="pwd" type="password" placeholder="密码"/><br />
+                                <input id="code" type="text" placeholder="请输入验证码"/>
+                                <input id="getCode" type="button" value="获取验证码" /><br />
+                                <input id="login" type="button" value="登录"/>
+                            </form>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="rg">注册</a>
+                        <div class="regw">
+                            <form action="#">
+                                <input id="username" type="text" placeholder="账号"/><span class="tips"></span><br />
+                                <input id="passwd" type="password" placeholder="密码"/><br />
+                                <input id="codeMa" type="text" placeholder="请输入验证码"/>
+                                <input id="getCodeBtn" type="button" value="获取验证码" /><br />
+                                <input id="registerBtn" type="button" value="注册"/>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

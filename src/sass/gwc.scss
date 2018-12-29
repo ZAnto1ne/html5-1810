@@ -1,0 +1,111 @@
+#top{
+    width:100%;
+    height: 90px;
+    background: #333333;
+    .top{
+        img{
+            margin:20px 0 0 10px;
+        }
+    }
+}
+#gwy{
+    width:100%;
+    .gwy{
+        width: 1200px;
+        
+        h2{
+            margin-top:20px;
+        }
+        #ym{
+            background: #eee;
+            border:3px solid #F4752A;
+            margin-top:30px;
+            #xr{
+                margin:20px;
+                li{
+                    padding:20px;
+                    border-bottom:2px dashed black;
+                    img{
+                        float: left;
+                    }
+                    .wz{
+                        span{
+                            display: inline-block;
+                            i{
+                                color:#F57528;
+                            }
+                        }
+                        span:nth-child(1){
+                            margin-top:30px;
+                        }
+                        span:nth-child(3){
+                            margin-top:20px;
+
+                        }
+                        span:nth-child(1),span:nth-child(3){
+                            margin-left:100px;
+                        }
+                       #txt{
+                            text-align:center;
+                            padding:5px 10px;
+                            width: 50px;
+                            margin-left:160px;
+                            background: #eee;
+                        }
+                        span:last-of-type{
+                            margin-left:150px;
+                            font-size:20px;
+                        }
+                        #del{
+                            margin-left:150px;
+                            padding:5px 10px;
+                            margin-top:16px;
+                        }
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none !important;
+                            margin: 0;
+                        }
+                    }
+                    
+                }
+                >p{
+                    
+                    margin-top:20px;
+                    margin-left:1000px;
+                    font-size:20px;
+                    i{
+                        color: #F27626;
+                    }
+                }
+                #submit1{
+                    width:80px;
+                    height: 30px;
+                    background: #F27626;
+                    color:white;
+                    font-size:16px;
+                    margin-top:20px;
+                    margin-left:1000px;
+                }
+            }
+        }
+    }
+}
+#bottom{
+    widows: 100%;
+    background: #F2F2F2;
+    margin-top:20px;
+    .bottom{
+        img{
+            width: 1200px;
+        }
+    }
+}
+#bt2{
+    widows: 100%;
+    .bottom{
+        img{
+            width: 1200px;
+        }
+    }
+}

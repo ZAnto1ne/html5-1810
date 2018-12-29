@@ -1,0 +1,100 @@
+#top{
+    width:100%;
+    .top{
+        height: 76px;
+        img{
+            margin: 20px 0 0 30px;
+        }
+    }
+}
+#main{
+    width:100%;
+    background: #F7F2EC;
+    .main{
+        height: 874px;
+        img{
+            margin:128px 0 0 66px;
+            float: left;
+            width:597px;
+        }
+        .log{
+            width: 428px;
+            height: 500px;
+            float: right;
+            background:white;
+            margin:128px 0 0 0;
+            position:relative;
+            ul li{
+                float: left;
+                a{
+                    display: inline-block;
+                    width:214px;
+                    height:50px;
+                    color:black;
+                    font-size:18px;
+                    line-height:50px;
+                    float: left;
+                    text-align:center;
+                }
+                #rg{
+                    background:#F7F7F9;
+                }
+                .loginw{
+                    position:absolute;
+                    width: 300px;
+                    top:100px;
+                    left:80px;
+                    form{
+                        input{
+                            height: 25px;
+                            font-size:16px;
+                            line-height:25px;
+                            margin-top:20px;
+                            width: 150px;
+                        }
+                        #getCode{
+                            width: 80px;
+                        }
+                        #login{
+                            width: 300px;
+                            background:red;
+                            color:white;
+                        }
+                    }
+                }
+                .regw{
+                    display:none;
+                    position:absolute;
+                    width: 300px;
+                    top:100px;
+                    left:80px;
+                    form{
+                        input{
+                            height: 25px;
+                            font-size:16px;
+                            line-height:25px;
+                            margin-top:20px;
+                            width: 150px;
+                        }
+                        span{
+                            display: inline-block;
+                            height: 25px;
+                            font-size:16px;
+                            line-height:25px;
+                            margin-top:20px;
+                            width: 150px;
+                        }
+                        #getCode,#getCodeBtn{
+                            width: 80px;
+                        }
+                        #login,#registerBtn{
+                            width: 300px;
+                            background:red;
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
