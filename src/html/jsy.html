@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jsy.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jsy.js"></script>
+</head>
+<body>
+    <!-- top -->
+    <div id="top">
+        <div class="top con">
+            <img id="tz" src="../images/index/logo.png" alt="" />
+        </div>
+    </div>
+    <!-- main -->
+    <div id="main">
+        <div class="main con">
+            <h2>填写并核对订单信息</h2>
+            <h3>收货人信息</h3>
+            <div class="main_t clearfix">
+                <div class="maint_l">
+                    <span><i>*</i>收货人姓名：</span><br />
+                    <span><i>*</i>省份/直辖市：</span><br />
+                    <span><i>*</i>详细地址：</span><br />
+                    <span><i>*</i>邮政编码：</span><br />
+                    <span><i>*</i>手机号码：</span>
+                </div>
+                <div class="maint_r">
+                    <input type="text" /><br />
+                    <select placeholder="请选择">
+                      <option value ="请选择">请选择</option>
+                      <option value ="广东">广东</option>
+                      <option value="浙江">浙江</option>
+                      <option value="湖南">湖南</option>
+                    </select>
+                    <select placeholder="请选择">
+                      <option value ="请选择">请选择</option>
+                      
+                    </select>
+                    <select placeholder="请选择">
+                      <option value ="请选择">请选择</option>
+                      
+                    </select><br />
+                    <input type="text" /><span>温馨提示：35个以内的中文字符</span><br />
+                    <input type="text" /><br />
+                    <input type="text" /><br />
+                    <input type="checkbox" /><span>设为默认</span>
+                </div>
+                <p>注：如果收货人并非您本人，您可点此添加订货人联系信息。</p>
+                <button class="qr">确认收货人信息</button>
+                <button class="qx">修改</button>
+            </div>
+            <h3>配送信息</h3>
+            <div class="main_c clearfix">
+                <div class="mainc_l">
+                    <span>配送方式</span><br />
+                    <input type="radio" checked /><span>快递，全场满19元免运费</span>
+                </div>
+                <div class="mainc_r">
+                    <span>配送方式</span><br />
+                    <input type="radio" name="rad1" checked/><span>工作日、双休日与假日均可送货</span><input type="radio" name="rad1" /><span>只工作日送货（双休日、假日不用送）</span><br />
+                    <input type="radio" name="rad1" /><span>只双休日、假日送货（工作日不用送）</span><input type="radio" name="rad1" /><span>白天没人，尽量安排晚上送货</span><br />
+                </div>
+                <button class="qr1">确认配送信息</button>
+                <button class="qx1">修改</button>
+            </div>
+            <h3>支付方式</h3>
+            <div class="main_b">
+                <div class="mainb_t">
+                    <p>您也可以同时：</p>
+                    <input type="checkbox" /><span><b>用礼品卡冲抵金额</b></span><br />
+                    <p></p>
+                </div>
+                <div class="mainb_b">
+                    <input type="radio" name="rad2" checked/><span><i>在线支付</i>即时到账，支持绝大部分银行卡借记卡、信用卡和支付平台</span><br />
+                    <input type="radio" name="rad2" /><span><i>银行汇款</i>您需提交订单后再到银行把货款汇入走秀账号</span><br />
+                    <input type="radio" name="rad2" /><span><i>货到付款</i>先送货再收款，请您在快递人员送货时付款</span><br />
+                </div>
+                <button class="qr1">确认支付方式</button>
+                <button class="qx1">修改</button>
+            </div>
+            <h3>商品清单</h3>
+            <div class="ht">
+                <span>商品</span>
+                <span>购买价</span>
+                <span>数量</span>
+            </div>
+            <div id="htx" class="htx clearfix">
+                <!-- <div>
+                    <img src="../images/list/t1.png" height="107" width="88" alt="" />
+                    <div class="htx_c">
+                        <p>Calvin Klein Jeans</p>
+                        <p>男士黑白色短袖T恤</p>
+                        <p>颜色：白色 尺码：XL</p>
+                    </div>
+                    <div class="htx_r">
+                        <p>￥302</p>
+                        <p>￥181</p>
+                    </div>
+                    <div class="htx_e">
+                        <p>1</p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="end clearfix">
+                <div class="end_l">
+                    <div>
+                        <b>使用优惠券/礼包/打折</b>
+                    </div>
+                    <div><b>客户留言</b></div>
+                    <div><b>索取发票</b></div>
+                </div>
+                <div class="fh">
+                    <div class="jiafh">+</div><br />
+                    <div class="jiafh">+</div><br />
+                    <div class="jiafh">+</div>
+                </div>
+                <div class="end_r">
+                    <div id="money" class="endr_t">
+                        <!-- <p>商品总价：￥302</p>
+                        <p>优惠金额：<span>￥121</span></p>
+                        <p>运费：￥15</p>
+                        <p>订单应付金额：<span>￥196</span></p> -->
+                    </div>
+                    <button id="zf" class="endr_b">提交订单<i>></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bottom -->
+    <div id="bottom">
+        <div class="bottom con">
+            <img src="../images/list/bottom.png" alt="" />
+        </div>
+    </div>
+    <div id="bt2">
+        <div class="bottom con">
+            <img src="../images/list/bt2.png" alt="" />
+        </div>
+    </div>
+</body>
+</html>
